@@ -33,19 +33,19 @@ export function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@digitalpro.com",
+      details: "hello@novatrix.com",
       description: "Send us an email anytime",
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+91 9847512024",
       description: "Mon-Fri from 8am to 5pm",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "123 Business Ave, Suite 100",
+      details: "SSM POLY TECHNIC COLLEGE TIRUR",
       description: "New York, NY 10001",
     },
   ]

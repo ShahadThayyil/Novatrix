@@ -6,42 +6,42 @@ import { ArrowRight } from "lucide-react"
 const team = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Shahina",
     role: "Chief Executive Officer (CEO)",
     bio: "Visionary leader driving innovation and growth at Novatrix.",
-    image: "/team/ceo.jpg",
+    image: "/shahina.jpeg",
     color: "#f97316",
   },
   {
     id: 2,
-    name: "David Miller",
+    name: "Shahad T",
     role: "Chief Operating Officer (COO)",
     bio: "Ensures smooth operations and efficiency across all departments.",
-    image: "/logov2.png",
+    image: "/shahad.jpeg",
     color: "#ea580c",
   },
   {
     id: 3,
-    name: "Sophia Lee",
+    name: "Hisham",
     role: "Head of Marketing",
     bio: "Creative strategist building global brand presence and impact.",
-    image: "/team/marketing.jpg",
+    image: "/hisham.jpeg",
     color: "#facc15",
   },
   {
     id: 4,
-    name: "James Carter",
+    name: "Vishnu",
     role: "Lead Developer",
     bio: "Tech innovator specializing in scalable and futuristic solutions.",
-    image: "/team/lead-dev.jpg",
+    image: "/vishnu.jpeg",
     color: "#22c55e",
   },
   {
     id: 5,
-    name: "Emma Davis",
+    name: "Abhishek",
     role: "Head of Design",
     bio: "Designs unique digital experiences with bold creativity.",
-    image: "/team/design.jpg",
+    image: "/Abhishek.jpeg",
     color: "#3b82f6",
   },
 ]
@@ -54,7 +54,7 @@ export function CreativePortfolio() {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
             Meet Our{" "}
-            <span className="block text-primary transform -rotate-3 skew-y-6 bg-card px-8 py-2 inline-block">
+            <span className="block text-primary bg-card px-8 py-2 inline-block rounded-xl shadow-sm">
               Smart Team
             </span>
           </h2>
@@ -64,32 +64,27 @@ export function CreativePortfolio() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {team.map((member, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
+          {team.map((member) => (
             <Card
               key={member.id}
-              className={`group overflow-hidden relative rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 
-                transform hover:-translate-y-4 hover:rotate-2
-                ${index % 2 === 0 ? "rotate-2 -skew-y-2" : "-rotate-3 skew-y-2"}
-                ${index % 3 === 0 ? "translate-y-4" : ""}
-              `}
+              className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
             >
-              {/* Image */}
-              <div className="relative w-full h-64  overflow-hidden">
-                <img
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white font-semibold">{member.role}</span>
+              {/* Image with hexagon shape */}
+              <div className="flex justify-center mt-6">
+                <div className="w-32 h-32 relative overflow-hidden clip-hexagon shadow-lg">
+                  <img
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
               </div>
 
               {/* Content */}
-              <CardContent className="p-6 relative z-10">
+              <CardContent className="text-center p-6">
                 <span
-                  className="text-xs font-medium px-3 py-1 rounded-full text-white shadow-md"
+                  className="inline-block text-xs font-medium px-3 py-1 rounded-full text-white shadow-md"
                   style={{ backgroundColor: member.color }}
                 >
                   {member.role.split(" ")[0]}
@@ -99,9 +94,11 @@ export function CreativePortfolio() {
                   {member.name}
                 </h3>
 
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{member.bio}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {member.bio}
+                </p>
 
-                <div className="flex items-center text-primary font-medium text-sm group-hover:underline cursor-pointer">
+                <div className="flex items-center justify-center text-primary font-medium text-sm group-hover:underline cursor-pointer">
                   View Profile
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -110,6 +107,20 @@ export function CreativePortfolio() {
           ))}
         </div>
       </div>
+
+      {/* Hexagon clip-path */}
+      <style jsx>{`
+        .clip-hexagon {
+          clip-path: polygon(
+            25% 6%,
+            75% 6%,
+            100% 50%,
+            75% 94%,
+            25% 94%,
+            0% 50%
+          );
+        }
+      `}</style>
     </section>
   )
 }
