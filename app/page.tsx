@@ -9,16 +9,36 @@ import { AsymmetricalFooter } from "@/components/asymmetrical-footer"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen bg-background scroll-smooth">
       <SidebarNavigation />
       <main className="flex-1 ml-0 lg:ml-20 xl:ml-24">
-        <SplitHero id="hero" />
-        <AsymmetricalServices id="services" />
-        <DiagonalAbout id="about" />
-        <CreativePortfolio id="portfolio" />
-        <InteractiveTestimonials id="testimonials" />
-        <ModernContact id="contact" />
-        <AsymmetricalFooter id="footer" />
+        <section id="hero">
+          <SplitHero />
+        </section>
+
+        <section id="services">
+          <AsymmetricalServices />
+        </section>
+
+        <section id="about">
+          <DiagonalAbout />
+        </section>
+
+        <section id="portfolio">
+          <CreativePortfolio />
+        </section>
+
+        <section id="testimonials">
+          <InteractiveTestimonials />
+        </section>
+
+        <section id="contact">
+          <ModernContact />
+        </section>
+
+        <section id="footer">
+          <AsymmetricalFooter />
+        </section>
       </main>
     </div>
   )

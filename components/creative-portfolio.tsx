@@ -9,7 +9,7 @@ const team = [
     name: "Shahina",
     role: "Chief Executive Officer (CEO)",
     bio: "Visionary leader driving innovation and growth at Novatrix.",
-    image: "/shahina.jpeg",
+    image: "/shahina-01.png",
     color: "#f97316",
   },
   {
