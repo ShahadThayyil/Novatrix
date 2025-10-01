@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react"
 const team = [
   {
     id: 1,
-    name: "Shahina",
+    name: "Shahina CV",
     role: "Chief Executive Officer (CEO)",
     bio: "Visionary leader driving innovation and growth at Novatrix.",
     image: "/shahina-01.png",
